@@ -10,8 +10,21 @@
     let status = "";
 </script>
 
-<div class="wide_title">
-    <h3>スキールネットへようこそ！</h3>
+<div class="top-view">
+    <div class="top-content">
+        <div class="text-container">
+            <div class="center-title">
+                <p> 校内でのスキルネットワークの制作 </p>
+            </div>
+            <div class="subtitle"> <p>ちーむ: あ い う え</p> </div>
+        </div>
+        <div class="img-container">
+            <img
+                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
+                height="200"
+            />
+        </div>
+    </div>
 </div>
 <div class="main">
     <p>
@@ -77,5 +90,36 @@
     </Button>
 </div>
 
-<style>
+<style lang="scss">
+    .top-view {
+        height: 97vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+
+        .top-content {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background-color: aqua;
+
+            .text-container {
+                text-align: center;
+
+                .center-title {
+                    p {
+                        font-weight: 900;
+                        font-size: 40px;
+                        color: var(--m3-primary);
+                    }
+                }
+            }
+
+            .img-container img {
+                display: block;
+                margin-left: auto;
+            }
+        }
+    }
 </style>

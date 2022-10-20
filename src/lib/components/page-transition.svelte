@@ -6,6 +6,8 @@
     export let data: PageData;
     let animations = false;
 
+    const xAxis = false;
+
     onMount(
         () =>
             (animations = !window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -15,12 +17,21 @@
 
 {#key data}
     {#if animations}
-        <div
-            in:fly={{ y: -5, duration: 250, delay: 300 }}
-            out:fly={{ y: 5, duration: 250 }}
-        >
-            <slot />
-        </div>
+        {#if xAxis}
+            <div
+                in:fly={{ x: -5, duration: 250, delay: 300 }}
+                out:fly={{ x: 5, duration: 250 }}
+            >
+                <slot />
+            </div>
+        {:else}
+            <div
+                in:fly={{ y: -5, duration: 250, delay: 300 }}
+                out:fly={{ y: 5, duration: 250 }}
+            >
+                <slot />
+            </div>
+        {/if}
     {:else}
         <slot />
     {/if}
