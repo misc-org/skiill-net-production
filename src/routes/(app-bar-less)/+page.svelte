@@ -6,8 +6,6 @@
     onMount(() => {
         isLoading.set(false);
     });
-
-    let status = "";
 </script>
 
 <div class="top-view">
@@ -16,74 +14,35 @@
             <div class="center-title">
                 <p> 校内でのスキルネットワークの制作 </p>
             </div>
-            <div class="subtitle"> <p>ちーむ: あ い う え</p> </div>
+            <div class="subtitle">
+                <p>メンバー: 町田 渉, 占部 颯, 稗田 花林 </p>
+            </div>
         </div>
         <div class="img-container">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
                 height="200"
+                alt=""
             />
         </div>
     </div>
 </div>
 <div class="main">
-    <p>
-        日頃から、こんなスキルを持った人がいないかな、こんな仲間がいたらなと感じていました。<br
-        />
-        そこで、コンピュータの技術を使って、仲間集めが出来ないかと考えました。それがスキールネットです。<br
-        />
-        自分にはないスキルを持った仲間を探すためのサイトを作り、自分で使用するだけではなく、<br
-        />
-        多くの人にもサイトの作り方を資料として公開し、問題の解決に繋げたいと思いました。<br
-        />
-        企業や社会人向けにはスキルのデータベースのようなものがあるかもしれませんが、学生にはないことに疑問を感じていました。<br
-        />
-        だからこそ学生のための学生が必要とする項目を作成し、より目的の人材にたどり着けるように募集設定に工夫をするつもりです。<br
-        />
-        また、部活動や探究活動以外にも、テスト対策など生徒同士で気軽に使用できるようにするつもりです。<br
-        />
-        自ら学びながら、仲間が相互に教え合い、様々なことに取り組むスタイルは、これからの新しい学習方法だと考えます。<br
-        />
-        そのための最適な解決方法がスキールネットです<br />
-    </p>
-    <p>
-        日頃から、こんなスキルを持った人がいないかな、こんな仲間がいたらなと感じていました。<br
-        />
-        そこで、コンピュータの技術を使って、仲間集めが出来ないかと考えました。それがスキールネットです。<br
-        />
-        自分にはないスキルを持った仲間を探すためのサイトを作り、自分で使用するだけではなく、<br
-        />
-        多くの人にもサイトの作り方を資料として公開し、問題の解決に繋げたいと思いました。<br
-        />
-        企業や社会人向けにはスキルのデータベースのようなものがあるかもしれませんが、学生にはないことに疑問を感じていました。<br
-        />
-        だからこそ学生のための学生が必要とする項目を作成し、より目的の人材にたどり着けるように募集設定に工夫をするつもりです。<br
-        />
-        また、部活動や探究活動以外にも、テスト対策など生徒同士で気軽に使用できるようにするつもりです。<br
-        />
-        自ら学びながら、仲間が相互に教え合い、様々なことに取り組むスタイルは、これからの新しい学習方法だと考えます。<br
-        />
-        そのための最適な解決方法がスキールネットです<br />
-    </p>
-    <p>
-        日頃から、こんなスキルを持った人がいないかな、こんな仲間がいたらなと感じていました。<br
-        />
-        そこで、コンピュータの技術を使って、仲間集めが出来ないかと考えました。それがスキールネットです。<br
-        />
-        自分にはないスキルを持った仲間を探すためのサイトを作り、自分で使用するだけではなく、<br
-        />
-        多くの人にもサイトの作り方を資料として公開し、問題の解決に繋げたいと思いました。<br
-        />
-        企業や社会人向けにはスキルのデータベースのようなものがあるかもしれませんが、学生にはないことに疑問を感じていました。<br
-        />
-        だからこそ学生のための学生が必要とする項目を作成し、より目的の人材にたどり着けるように募集設定に工夫をするつもりです。<br
-        />
-        また、部活動や探究活動以外にも、テスト対策など生徒同士で気軽に使用できるようにするつもりです。<br
-        />
-        自ら学びながら、仲間が相互に教え合い、様々なことに取り組むスタイルは、これからの新しい学習方法だと考えます。<br
-        />
-        そのための最適な解決方法がスキールネットです<br />
-    </p>
+    <h2>概要</h2>
+    <div class="grid reverse">
+        <div class="item article">
+            <p>
+                “総合的な探究の時間” の実施がされている
+                今,異なる個性を持つ者同士でスキルを発揮するため,
+                自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
+                校内での求人の投稿と管理を行うために,
+                SvelteフレームワークとFirebaseを使って, webアプリを制作した.
+                DXの向上やDB構造の工夫により実装を完了できたが,
+                アカウント登録とセキュリティについて課題が残った.
+            </p>
+        </div>
+        <div class="item image"> わああ </div>
+    </div>
     <p>ホームかも</p>
     <Button variant="raised">
         <Label>ステータスを取得</Label>
@@ -92,33 +51,79 @@
 
 <style lang="scss">
     .top-view {
-        height: 97vh;
-        display: flex;
+        position: relative;
+        height: 93vh;
         align-items: center;
         justify-content: center;
-        padding: 40px;
+        margin: 30px;
+        border-radius: 20px;
+        background-color: var(--m3-inverse-primary);
 
         .top-content {
             width: 100%;
-            height: 100%;
-            padding: 20px;
-            background-color: aqua;
 
             .text-container {
                 text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, -50%);
 
                 .center-title {
                     p {
                         font-weight: 900;
                         font-size: 40px;
+                        line-height: 1;
                         color: var(--m3-primary);
                     }
                 }
             }
 
-            .img-container img {
-                display: block;
-                margin-left: auto;
+            .img-container {
+                position: absolute;
+                bottom: 25px;
+                right: 25px;
+            }
+        }
+    }
+    .main {
+        h2 {
+            font-weight: 800;
+            font-size: 40px;
+            text-align: left;
+            padding-left: 30px;
+            line-height: 0;
+        }
+        .grid {
+            display: grid;
+            // gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            @media screen and (max-width: 400px) {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            &.reverse {
+                @media screen and (max-width: 860px) {
+                    .item.rule-text {
+                        order: 2;
+                    }
+                    .item.rule-img {
+                        order: 1;
+                    }
+                }
+            }
+        }
+        .item {
+            // padding: 15px;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.article {
+                margin: 20px;
             }
         }
     }
