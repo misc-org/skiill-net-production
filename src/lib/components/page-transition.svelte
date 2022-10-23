@@ -1,7 +1,7 @@
 <script lang="ts">
     import { fly } from "svelte/transition";
     import { onMount } from "svelte";
-    import type { PageData } from ".svelte-kit/types/src/routes/$types";
+    import type { PageData } from ".svelte-kit/types/src/routes/(app-bar-less)/$types";
 
     export let data: PageData;
     let animations = false;

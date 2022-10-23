@@ -2,6 +2,15 @@
     import { isLoading } from "$lib/model/store";
     import Button, { Icon, Label } from "@smui/button";
     import { onMount } from "svelte";
+    import List, {
+        Item,
+        Graphic,
+        Meta,
+        Text,
+        PrimaryText,
+        SecondaryText,
+        Separator,
+    } from "@smui/list";
 
     onMount(() => {
         isLoading.set(false);
@@ -28,28 +37,127 @@
     </div>
 </div>
 <div class="main">
-    <h2>概要</h2>
-    <div class="grid reverse">
-        <div class="item article">
-            <p>
-                “総合的な探究の時間” の実施がされている
-                今,異なる個性を持つ者同士でスキルを発揮するため,
-                自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
-                校内での求人の投稿と管理を行うために,
-                SvelteフレームワークとFirebaseを使って, webアプリを制作した.
-                DXの向上やDB構造の工夫により実装を完了できたが,
-                アカウント登録とセキュリティについて課題が残った.
-            </p>
+    <div class="abstract">
+        <div class="title"><p>概要</p></div>
+        <div class="grid reverse">
+            <div class="item article">
+                <p>
+                    “総合的な探究の時間” の実施がされている
+                    今,異なる個性を持つ者同士でスキルを発揮するため,
+                    自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
+                    校内での求人の投稿と管理を行うために,
+                    SvelteフレームワークとFirebaseを使って, webアプリを制作した.
+                    DXの向上やDB構造の工夫により実装を完了できたが,
+                    アカウント登録とセキュリティについて課題が残った.
+                </p>
+            </div>
+            <div class="item image">
+                <img
+                    src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
+                    height="200"
+                    alt=""
+                />
+            </div>
         </div>
-        <div class="item image"> わああ </div>
     </div>
-    <p>ホームかも</p>
-    <Button variant="raised">
-        <Label>ステータスを取得</Label>
-    </Button>
+    <div class="index">
+        <div class="title">
+            <p>目次</p>
+        </div>
+        <div class="navigator">
+            <Button on:click={() => null} variant="raised">
+                <Label>はじめから読む</Label>
+                <Icon class="material-icons">arrow_forward</Icon>
+            </Button>
+        </div>
+        <div class="grid">
+            <div class="item jump-list">
+                <List>
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">rocket_launch</Graphic>
+                        <Text>導入</Text>
+                        <Meta class="material-icons">info</Meta>
+                    </Item>
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">send</Graphic>
+                        <Text>Send</Text>
+                    </Item>
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">archive</Graphic>
+                        <Text>Archive</Text>
+                    </Item>
+                    <Separator />
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">clear</Graphic>
+                        <Text>Delete</Text>
+                    </Item>
+                </List>
+            </div>
+            <div class="item jump-list">
+                <List>
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">rocket_launch</Graphic>
+                        <Text>導入</Text>
+                        <Meta class="material-icons">arrow_forward</Meta>
+                    </Item>
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">send</Graphic>
+                        <Text>Send</Text>
+                        <Meta class="material-icons">arrow_forward</Meta>
+                    </Item>
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">archive</Graphic>
+                        <Text>Archive</Text>
+                        <Meta class="material-icons">arrow_forward</Meta>
+                    </Item>
+                    <Separator />
+                    <Item on:SMUI:action={() => null}>
+                        <Graphic class="material-icons">clear</Graphic>
+                        <Text>Delete</Text>
+                        <Meta class="material-icons">arrow_forward</Meta>
+                    </Item>
+                </List>
+            </div>
+        </div>
+    </div>
+    <div class="members">
+        <div class="title"><p>概要</p></div>
+        <div class="grid reverse">
+            <div class="item article">
+                <p>
+                    “総合的な探究の時間” の実施がされている
+                    今,異なる個性を持つ者同士でスキルを発揮するため,
+                    自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
+                    校内での求人の投稿と管理を行うために,
+                    SvelteフレームワークとFirebaseを使って, webアプリを制作した.
+                    DXの向上やDB構造の工夫により実装を完了できたが,
+                    アカウント登録とセキュリティについて課題が残った.
+                </p>
+            </div>
+            <div class="item image">
+                <img
+                    src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
+                    height="200"
+                    alt=""
+                />
+            </div>
+        </div>
+    </div>
 </div>
 
 <style lang="scss">
+    // common component
+    .title {
+        p {
+            font-weight: 800;
+            padding: 20px 0 0 10px;
+            margin-bottom: 18px;
+            font-size: 35px;
+            text-align: left;
+            line-height: 0;
+        }
+    }
+
     .top-view {
         position: relative;
         height: 93vh;
@@ -58,6 +166,12 @@
         margin: 30px;
         border-radius: 20px;
         background-color: var(--m3-inverse-primary);
+
+        @media screen and (max-width: 860px) {
+            margin: 0px;
+            border-radius: 0px;
+            height: 100vh;
+        }
 
         .top-content {
             width: 100%;
@@ -72,6 +186,7 @@
 
                 .center-title {
                     p {
+                        padding: 10px;
                         font-weight: 900;
                         font-size: 40px;
                         line-height: 1;
@@ -88,42 +203,62 @@
         }
     }
     .main {
-        h2 {
-            font-weight: 800;
-            font-size: 40px;
-            text-align: left;
-            padding-left: 30px;
-            line-height: 0;
+        padding: 0 100px;
+
+        @media screen and (max-width: 860px) {
+            padding: 0 20px;
         }
+
         .grid {
             display: grid;
-            // gap: 10px;
+
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             @media screen and (max-width: 400px) {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
 
             &.reverse {
-                @media screen and (max-width: 860px) {
-                    .item.rule-text {
+                @media screen and (max-width: 830px) {
+                    .item.article {
                         order: 2;
                     }
-                    .item.rule-img {
+                    .item.image {
                         order: 1;
                     }
                 }
             }
+            // .item {
+            //     height: 100%;
+            //     // text-align: center;
+            //     // display: flex;
+            //     // justify-content: center;
+            //     // align-items: center;
+            // }
         }
-        .item {
-            // padding: 15px;
-            height: 100%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            &.article {
-                margin: 20px;
+        .index {
+            border: 0.2px solid var(--m3-on-surface-variant);
+            background-color: var(--m3-surface-variant);
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            position: relative;
+
+            .navigator {
+                position: absolute;
+                top: 10%;
+                right: 3%;
+            }
+
+            .title {
+                padding-left: 10px;
+                margin-top: -10px;
+            }
+            .jump-list {
+                padding-top: 20px;
+                @media screen and (max-width: 860px) {
+                    padding: 0px;
+                }
             }
         }
     }
