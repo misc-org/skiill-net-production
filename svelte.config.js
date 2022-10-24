@@ -10,6 +10,7 @@ export default {
             assets: "build",
             fallback: "index.html",
             precompress: true,
+            strict: true,
         }),
 
         // paths: {

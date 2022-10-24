@@ -11,6 +11,7 @@
         SecondaryText,
         Separator,
     } from "@smui/list";
+    import { PathId, runTransition } from "$lib/model/constants";
 
     onMount(() => {
         isLoading.set(false);
@@ -65,7 +66,10 @@
             <p>目次</p>
         </div>
         <div class="navigator">
-            <Button on:click={() => null} variant="raised">
+            <Button
+                on:click={() => runTransition(PathId.ARTICLES)}
+                variant="raised"
+            >
                 <Label>はじめから読む</Label>
                 <Icon class="material-icons">arrow_forward</Icon>
             </Button>
@@ -80,11 +84,11 @@
                     </Item>
                     <Item on:SMUI:action={() => null}>
                         <Graphic class="material-icons">send</Graphic>
-                        <Text>Send</Text>
+                        <Text>研究方法</Text>
                     </Item>
                     <Item on:SMUI:action={() => null}>
                         <Graphic class="material-icons">archive</Graphic>
-                        <Text>Archive</Text>
+                        <Text>結果・結論</Text>
                     </Item>
                     <Separator />
                     <Item on:SMUI:action={() => null}>
@@ -125,8 +129,8 @@
         <div class="grid reverse">
             <div class="item article">
                 <p>
-                    “総合的な探究の時間” の実施がされている
-                    今,異なる個性を持つ者同士でスキルを発揮するため,
+                    “総合的な探究の時間” の実施がされている今,
+                    異なる個性を持つ者同士でスキルを発揮するため,
                     自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
                     校内での求人の投稿と管理を行うために,
                     SvelteフレームワークとFirebaseを使って, webアプリを制作した.
@@ -215,6 +219,10 @@
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             @media screen and (max-width: 400px) {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .article {
+                text-align: left;
             }
 
             &.reverse {
