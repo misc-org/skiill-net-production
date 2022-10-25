@@ -39,7 +39,7 @@
 </div>
 <div class="main">
     <div class="abstract">
-        <div class="title"><p>概要</p></div>
+        <div class="title"><p>| 概要</p></div>
         <div class="grid reverse">
             <div class="item article">
                 <p>
@@ -156,6 +156,7 @@
             font-weight: 800;
             padding: 20px 0 0 10px;
             margin-bottom: 18px;
+            margin-left: -12px;
             font-size: 35px;
             text-align: left;
             line-height: 0;
@@ -208,6 +209,8 @@
     }
     .main {
         padding: 0 100px;
+        max-width: 1400px;
+        margin: 0 auto;
 
         @media screen and (max-width: 860px) {
             padding: 0 20px;
