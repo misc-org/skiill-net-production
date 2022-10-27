@@ -87,7 +87,10 @@
                     on:click={() => ($isDrawerOpened = !$isDrawerOpened)}
                     >menu</IconButton
                 >
-                <Title><strong>校内でのスキルネットワークの制作</strong></Title>
+                <Title
+                    ><strong>校内でのスキル共有ネットワークの制作</strong
+                    ></Title
+                >
             </Section>
         </Row>
 

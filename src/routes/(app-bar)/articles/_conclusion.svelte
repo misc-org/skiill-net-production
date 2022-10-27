@@ -3,7 +3,8 @@
     <div class="grid reverse">
         <div class="item article">
             <p>
-                この研究によって, JavaScriptフレームワークであるSvelteと,
+                &nbsp;&nbsp;&nbsp;この研究によって,
+                JavaScriptフレームワークであるSvelteと,
                 その他TypeScriptなどの言語を使い,
                 バックエンドをFirebaseで実装することで, “スキールネット”
                 を制作でき,

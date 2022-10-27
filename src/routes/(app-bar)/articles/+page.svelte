@@ -13,7 +13,7 @@
 </script>
 
 <div class="wide_title">
-    <h3>校内でのスキルネットワークの制作</h3>
+    <h3>校内でのスキル共有ネットワークの制作</h3>
 </div>
 <div class="main">
     <Introduction />

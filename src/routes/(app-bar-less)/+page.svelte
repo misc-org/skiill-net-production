@@ -22,7 +22,7 @@
     <div class="top-content">
         <div class="text-container">
             <div class="center-title">
-                <p> 校内でのスキルネットワークの制作 </p>
+                <p> 校内でのスキル共有ネットワークの制作 </p>
             </div>
             <div class="subtitle">
                 <p>メンバー: 町田 渉, 占部 颯, 稗田 花林 </p>
@@ -43,7 +43,7 @@
         <div class="grid reverse">
             <div class="item article">
                 <p>
-                    “総合的な探究の時間” の実施がされている
+                    &nbsp;&nbsp;&nbsp;“総合的な探究の時間” の実施がされている
                     今,異なる個性を持つ者同士でスキルを発揮するため,
                     自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
                     校内での求人の投稿と管理を行うために,
@@ -129,7 +129,7 @@
         <div class="grid reverse">
             <div class="item article">
                 <p>
-                    “総合的な探究の時間” の実施がされている今,
+                    &nbsp;&nbsp;&nbsp;“総合的な探究の時間” の実施がされている今,
                     異なる個性を持つ者同士でスキルを発揮するため,
                     自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
                     校内での求人の投稿と管理を行うために,

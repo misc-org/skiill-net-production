@@ -3,7 +3,7 @@
     <div class="grid reverse">
         <div class="item article">
             <p>
-                序論にて,
+                &nbsp;&nbsp;&nbsp;序論にて,
                 校内でのスキル共有サイトを制作する意義について述べた.　ここでは,
                 スキル共有ネットワークとサイトの制作方法を明らかにするために,
                 ツールの選定を行い, 実際に実装を行った. 　はじめに,
@@ -35,7 +35,7 @@
         </div>
         <div class="item article">
             <p>
-                使用したツールは以下のように選定した.
+                &nbsp;&nbsp;&nbsp;使用したツールは以下のように選定した.
                 誰でも簡単にアクセスできるようにするためには,
                 OSによる依存を無くす観点から, webアプリをベースにし,
                 システムを構築した.　また, 実装する機能が多いことや,
@@ -59,10 +59,10 @@
     <div class="grid reverse">
         <div class="item article">
             <p>
-                また, 求人データの投稿と管理, アカウンとシステムの実装は,
-                BaaSであるGoogleのFirebaseを用い, SDKをwebアプリへバンドルした.
-                　求人データ投稿にはFirebase FireStoreを,
-                アカウントシステムには, OAuthに準拠したFirebase
+                &nbsp;&nbsp;&nbsp;また, 求人データの投稿と管理,
+                アカウンとシステムの実装は, BaaSであるGoogleのFirebaseを用い,
+                SDKをwebアプリへバンドルした. 　求人データ投稿にはFirebase
+                FireStoreを, アカウントシステムには, OAuthに準拠したFirebase
                 Authenticationを使用し,
                 安全にデータの管理とアカウントシステムを構築することができた.　また,
                 Firebaseの設定をJSONに書き出すことで,
@@ -88,7 +88,7 @@
         </div>
         <div class="item article">
             <p>
-                では,
+                &nbsp;&nbsp;&nbsp;では,
                 どのようにシステムを開発していくのかを次のように示す.　フロントエンドについては前述の通り,
                 Svelte, TypeScript, HTML, CSS, SCSS,
                 JSONを使って開発を行う.　また,
@@ -103,7 +103,7 @@
     <div class="grid reverse">
         <div class="item article">
             <p>
-                具体的には, 次の手順でデプロイされる：
+                &nbsp;&nbsp;&nbsp;具体的には, 次の手順でデプロイされる：
                 １．node.jsがインストールされた
                 　　Ubuntuインスタンスの準備を行う２．package.json
                 に記述された依存関係を 　　インストールする (npm install)
@@ -144,7 +144,8 @@
         </div>
         <div class="item article">
             <p>
-                ここまで, システム開発の全体を確認した. では次に,
+                &nbsp;&nbsp;&nbsp;ここまで, システム開発の全体を確認した.
+                では次に,
                 求人データを保存するデータベースの構築を行う.　FireStoreは,
                 NoSQL方式のデータベースであり,
                 一般的なSQLとは設計が異なる.　それを踏まえて必要な仕様に合わせてカラムと型を考え,
