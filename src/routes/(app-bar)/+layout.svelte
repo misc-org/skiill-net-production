@@ -24,9 +24,9 @@
     import Splash from "$lib/components/splash.svelte";
     import { LandScapeDetecter } from "$lib/model/landscape";
     import { PathId } from "$lib/model/constants";
-    import type { PageData } from "./$types";
     import Tab, { Label as TabLabel } from "@smui/tab";
     import TabBar from "@smui/tab-bar";
+    import type { PageData } from ".svelte-kit/types/src/routes/(app-bar-less)/$types";
 
     export let data: PageData;
 

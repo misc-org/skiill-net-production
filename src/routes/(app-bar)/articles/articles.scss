@@ -22,6 +22,13 @@
     }
 
     &.reverse {
+        .item.article {
+            order: 1;
+        }
+        .item.image {
+            order: 2;
+        }
+
         @media screen and (max-width: 830px) {
             .item.article {
                 order: 2;
@@ -31,11 +38,4 @@
             }
         }
     }
-    // .item {
-    //     height: 100%;
-    //     // text-align: center;
-    //     // display: flex;
-    //     // justify-content: center;
-    //     // align-items: center;
-    // }
 }

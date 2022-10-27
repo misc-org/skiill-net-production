@@ -1,6 +1,13 @@
 <div class="methods">
     <div class="title"><p>| 研究方法</p></div>
     <div class="grid reverse">
+        <div class="item image">
+            <img
+                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
+                height="200"
+                alt=""
+            />
+        </div>
         <div class="item article">
             <p>
                 &nbsp;&nbsp;&nbsp;序論にて,
@@ -16,13 +23,6 @@
                 以上の要求機能を満たすため, 次に挙げるツールを使い,
                 スキル共有ネットワークとサイトを制作した.
             </p>
-        </div>
-        <div class="item image">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
-                alt=""
-            />
         </div>
     </div>
     <div class="grid">
@@ -56,7 +56,36 @@
             </p>
         </div>
     </div>
+
     <div class="grid reverse">
+        <div class="item image">
+            <img
+                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
+                height="200"
+                alt=""
+            />
+        </div>
+
+        <div class="item article">
+            <p>
+                &nbsp;&nbsp;&nbsp;スキールネットは人と人との繋がりを推進していく新しいwebアプリなので,
+                IT企業のような爽やかな青色をメインカラーとして配色した。また、ドミナントカラー配色によって統一感を持たせることにした。
+                まず、青色をメインとした3色を考えるために、色見本を使用した。
+                メニューバーはwebサイトの軸の部分なので、最も明度が低く、彩度が高い重みのある印象の色を選択した。
+                次に見出しは、白文字と対比させるために、明度と彩度のバランスがよい色を選択した。最後にスワイプメニューは、
+                文字を見やすくさせるため、明度が高く中彩度の色を選択し、軽い印象を持たせた。
+            </p>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="item image">
+            <img
+                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
+                height="200"
+                alt=""
+            />
+        </div>
         <div class="item article">
             <p>
                 &nbsp;&nbsp;&nbsp;また, 求人データの投稿と管理,
@@ -70,15 +99,8 @@
                 拡張性が高まったといえる.
             </p>
         </div>
-        <div class="item image">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
-                alt=""
-            />
-        </div>
     </div>
-    <div class="grid">
+    <div class="grid reverse">
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
@@ -100,7 +122,15 @@
             </p>
         </div>
     </div>
-    <div class="grid reverse">
+    <div class="grid">
+        <div class="item image">
+            <img
+                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
+                height="200"
+                alt=""
+            />
+        </div>
+
         <div class="item article">
             <p>
                 &nbsp;&nbsp;&nbsp;具体的には, 次の手順でデプロイされる：
@@ -126,15 +156,8 @@
                 .gitignore
             </p>
         </div>
-        <div class="item image">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
-                alt=""
-            />
-        </div>
     </div>
-    <div class="grid">
+    <div class="grid reverse">
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
