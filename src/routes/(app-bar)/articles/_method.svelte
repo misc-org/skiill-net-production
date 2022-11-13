@@ -1,3 +1,13 @@
+<script lang="ts">
+    import { ZSH } from "./../../../../.svelte-kit/ambient.d.ts";
+    import { Style } from "$lib/model/inline-style";
+    import Accordion, { Panel, Header, Content } from "@smui-extra/accordion";
+    import IconButton, { Icon } from "@smui/icon-button";
+    import _ from "lodash";
+
+    let charaOpened = _.fill(Array(4), false);
+</script>
+
 <div class="methods">
     <div class="title"><p>| 研究方法</p></div>
     <div class="grid reverse">
@@ -65,30 +75,145 @@
 
     <div class="grid reverse">
         <div class="item image">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                alt=""
-            />
+            <img src="img/articles/04.png" alt="" />
         </div>
 
         <div class="item article">
             <p>
                 &nbsp;&nbsp;&nbsp;スキールネットは人と人との繋がりを推進していく新しいwebアプリなので,
-                IT企業のような爽やかな青色をメインカラーとして配色した。また、ドミナントカラー配色によって統一感を持たせることにした。
-                まず、青色をメインとした3色を考えるために、色見本を使用した。
-                メニューバーはwebサイトの軸の部分なので、最も明度が低く、彩度が高い重みのある印象の色を選択した。
-                次に見出しは、白文字と対比させるために、明度と彩度のバランスがよい色を選択した。最後にスワイプメニューは、
-                文字を見やすくさせるため、明度が高く中彩度の色を選択し、軽い印象を持たせた。
+                IT企業のような爽やかな青色をメインカラーとして配色した.また,
+                ドミナントカラー配色によって統一感を持たせることにした. まず,
+                青色をメインとした3色を考えるために, 色見本を使用した.
+                <br />
+                &nbsp;&nbsp;&nbsp;メニューバーはwebサイトの軸の部分なので, 最も明度が低く,
+                彩度が高い重みのある印象の色を選択した. 次に見出しは, 白文字と対比させるために,
+                明度と彩度のバランスがよい色を選択した.最後にスワイプメニューは,
+                文字を見やすくさせるため, 明度が高く中彩度の色を選択し, 軽い印象を持たせた.
+                <br />
+                &nbsp;&nbsp;&nbsp;以下が ”スキールネット” のロゴができるまでの遷移である.
+            </p>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="img/articles/logo/1.png" alt="" />
+            <p>オリジナル</p>
+        </div>
+        <div class="arrow material-icons">arrow_forward</div>
+        <div class="card">
+            <img src="img/articles/logo/2.png" alt="" />
+            <p>
+                角を丸くすることで柔らかさを出し, IT企業に多い水色することで,
+                爽やかさがでた.
+            </p>
+        </div>
+        <div class="arrow material-icons">arrow_forward</div>
+        <div class="card">
+            <img src="img/articles/logo/3.png" alt="" />
+            <p>
+                スキールネットが人と人とをつなぐネットワークであるという意味をこめて時計の代わりにネットワークのロゴを貼り付けた.
+            </p>
+        </div>
+        <div class="arrow material-icons">arrow_forward</div>
+        <div class="card">
+            <img src="img/articles/logo/4.png" alt="" />
+            <p>
+                ネットワークのロゴが複雑すぎるのでスキールネットが人と人とを繋ぐ電波の役割をするという意味で電波の形にしシンプルにまとめた.
             </p>
         </div>
     </div>
 
     <div class="grid">
+        <div class="item article">
+            <p>
+                &nbsp;&nbsp;&nbsp;webサイトのキャラクターデザインを考えるにあたり重要であることは何かまたwebサイト以外でのキャラクターデザインとの違いを考察した.
+                <br />
+                &nbsp;&nbsp;&nbsp;まず, 重要であることはコンセプトのわかりやすさとなじみやすさであると考えられる.
+                また, webサイト以外でのキャラクターデザインとの違いに関わる点においては,
+                サイトの内容を邪魔しないようなキャラクターであることが重要となってくる.
+                しかし, キャラクターはサイトを閲覧する人にとって一番印象に残る部分であるためインパクトを残すような物であることが必要になってくる.
+                <br />
+                &nbsp;&nbsp;&nbsp;これらの点を考慮し, 今回のサイトでは「海」をテーマにキャラクターを制作した.
+                コンセプトのわかりやすさの点において, 今回サイト全体の配色とキャラクターのデザインの担当が異なるため全体の配色を見た青色から海というイメージを考案した.
+                わかりやすさの点においては, 海から考えるイメージとして生物が最もわかりやすいと考えた.
+                しかし, 魚という括りで考えると種類など一目で伝わりにくいことが多いと考えられる.
+                そこで, くじらやかめなど誰もが一度は目や耳にしたことのある, 一目で伝わる生物をテーマにキャラクターを考案することにした.
+                　インパクトという点においては, 色の塗り方で表現した. ステンドグラスのような色の塗り方にすることによりサイト自体の邪魔をすることなくインパクトを与えられると考えた.
+                また, 色の変更が簡単に行えるため配色の関係などで修正を入れる場合も素早く対応ができる点からこの色の塗り方を選択した.
+                　これらの点を考慮し, 作成を進めるため簡易的なキャラクターデザインシートを使用してから作業を開始した.
+            </p>
+        </div>
+    </div>
+    <div class="chara-container">
+        <div class="chara c0">
+            <Accordion>
+                <Panel bind:open={charaOpened[0]}>
+                    <Header>
+                        <img src="img/articles/chara/whale.png" alt="" /><br />
+                        <div class="chara-title">くじら</div>
+                        <IconButton slot="icon" toggle pressed={charaOpened[0]}>
+                            <Icon class="material-icons" on>expand_less</Icon>
+                            <Icon class="material-icons">expand_more</Icon>
+                        </IconButton>
+                    </Header>
+                    <Content>The content for panel 0.</Content>
+                </Panel>
+            </Accordion>
+        </div>
+        <div class="arrow material-icons">sailing</div>
+        <div class="chara c1">
+            <Accordion>
+                <Panel bind:open={charaOpened[1]}>
+                    <Header>
+                        <img src="img/articles/chara/turtle.png" alt="" /><br />
+                        <div class="chara-title">かめ</div>
+                        <IconButton slot="icon" toggle pressed={charaOpened[1]}>
+                            <Icon class="material-icons" on>expand_less</Icon>
+                            <Icon class="material-icons">expand_more</Icon>
+                        </IconButton>
+                    </Header>
+                    <Content>The content for panel 1.</Content>
+                </Panel>
+            </Accordion>
+        </div>
+        <div class="arrow material-icons">sailing</div>
+        <div class="chara c2">
+            <Accordion>
+                <Panel bind:open={charaOpened[2]}>
+                    <Header>
+                        <img src="img/articles/chara/orca.png" alt="" /><br />
+                        <div class="chara-title">シャチ</div>
+                        <IconButton slot="icon" toggle pressed={charaOpened[2]}>
+                            <Icon class="material-icons" on>expand_less</Icon>
+                            <Icon class="material-icons">expand_more</Icon>
+                        </IconButton>
+                    </Header>
+                    <Content>The content for panel 2.</Content>
+                </Panel>
+            </Accordion>
+        </div>
+        <div class="arrow material-icons">sailing</div>
+        <div class="chara c3">
+            <Accordion>
+                <Panel bind:open={charaOpened[3]}>
+                    <Header>
+                        <img src="img/articles/chara/manta.png" alt="" /><br />
+                        <div class="chara-title">マンタ</div>
+                        <IconButton slot="icon" toggle pressed={charaOpened[3]}>
+                            <Icon class="material-icons" on>expand_less</Icon>
+                            <Icon class="material-icons">expand_more</Icon>
+                        </IconButton>
+                    </Header>
+                    <Content>The content for panel 3.</Content>
+                </Panel>
+            </Accordion>
+        </div>
+    </div>
+
+    <div class="grid reverse">
         <div class="item image">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                alt=""
-            />
+            <img src="img/articles/05.png" alt="" />
         </div>
         <div class="item article">
             <p>
@@ -104,7 +229,7 @@
             </p>
         </div>
     </div>
-    <div class="grid reverse">
+    <div class="grid ">
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
@@ -125,7 +250,7 @@
             </p>
         </div>
     </div>
-    <div class="grid">
+    <div class="grid reverse">
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
@@ -159,7 +284,7 @@
             </p>
         </div>
     </div>
-    <div class="grid reverse">
+    <div class="grid">
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
@@ -182,4 +307,94 @@
 
 <style lang="scss">
     @use "./articles.scss";
+
+    .card-container {
+        display: flex;
+        overflow-x: auto;
+        padding: 20px 0;
+
+        .card {
+            padding: 20px;
+            min-width: 250px;
+            max-width: 250px;
+            background-color: var(--m3-inverse-primary);
+            border-radius: 20px;
+            img {
+                border-radius: 20px;
+                height: 150px;
+            }
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 30px;
+        }
+    }
+    .chara-container {
+        display: flex;
+        overflow-x: auto;
+        padding: 20px 0;
+        margin: 0 -14%;
+
+        @keyframes fuwafuwa {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .chara {
+            padding: 20px;
+            min-width: 350px;
+            max-width: 350px;
+            // background-color: var(--m3-inverse-primary);
+            border-radius: 20px;
+
+            .chara-title {
+                font-size: 25px;
+                font-weight: 800;
+                color: var(--m3-primary);
+            }
+            img {
+                min-height: 300px;
+                border-radius: 20px;
+                width: 300px;
+            }
+
+            &.c0 {
+                img {
+                    animation: 3s fuwafuwa infinite;
+                }
+            }
+            &.c1 {
+                img {
+                    animation: 3.1s fuwafuwa infinite;
+                }
+            }
+            &.c2 {
+                img {
+                    animation: 2.9s fuwafuwa infinite;
+                }
+            }
+            &.c3 {
+                img {
+                    animation: 3.2s fuwafuwa infinite;
+                }
+            }
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 30px;
+        }
+    }
 </style>
