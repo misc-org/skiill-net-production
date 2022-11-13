@@ -2,6 +2,7 @@
     import { fly } from "svelte/transition";
     import { onMount } from "svelte";
     import type { PageData } from ".svelte-kit/types/src/routes/(app-bar-less)/$types";
+    import { Style } from "$lib/model/inline-style";
 
     export let data: PageData;
     let animations = false;
@@ -15,24 +16,26 @@
     );
 </script>
 
-{#key data}
-    {#if animations}
-        {#if xAxis}
-            <div
-                in:fly={{ x: -5, duration: 250, delay: 300 }}
-                out:fly={{ x: 5, duration: 250 }}
-            >
-                <slot />
-            </div>
+<div style={new Style({ overflowY: "hidden" }).toString()}>
+    {#key data}
+        {#if animations}
+            {#if xAxis}
+                <div
+                    in:fly={{ x: -5, duration: 250, delay: 300 }}
+                    out:fly={{ x: 5, duration: 250 }}
+                >
+                    <slot />
+                </div>
+            {:else}
+                <div
+                    in:fly={{ y: -5, duration: 250, delay: 300 }}
+                    out:fly={{ y: 5, duration: 250 }}
+                >
+                    <slot />
+                </div>
+            {/if}
         {:else}
-            <div
-                in:fly={{ y: -5, duration: 250, delay: 300 }}
-                out:fly={{ y: 5, duration: 250 }}
-            >
-                <slot />
-            </div>
+            <slot />
         {/if}
-    {:else}
-        <slot />
-    {/if}
-{/key}
+    {/key}
+</div>

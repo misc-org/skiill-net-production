@@ -226,6 +226,10 @@
 
             .article {
                 text-align: left;
+                p {
+                    font-size: large;
+                    line-height: 30px;
+                }
             }
 
             &.reverse {

@@ -2,11 +2,7 @@
     <div class="title"><p>| 研究方法</p></div>
     <div class="grid reverse">
         <div class="item image">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
-                alt=""
-            />
+            <img src="img/articles/02.png" alt="" />
         </div>
         <div class="item article">
             <p>
@@ -15,44 +11,54 @@
                 スキル共有ネットワークとサイトの制作方法を明らかにするために,
                 ツールの選定を行い, 実際に実装を行った. 　はじめに,
                 このネットワークとサイトの制作に実装に必要な機能を考え,
-                以下のように決定した： １．誰でも簡単にアクセスできるようにする.
-                ２．求人を共有できるシステムを作る.
-                ３．アカウントシステムを構築し, 自分で
-                　　投稿した求人を管理できるようにする.
-                ４．他の高校でもカスタマイズできるよう 　　拡張性を高める.
+                以下のように決定した：
+            </p>
+            <ol>
+                <li>誰でも簡単にアクセスできるようにする.</li>
+                <li>求人を共有できるシステムを作る.</li>
+                <li
+                    >アカウントシステムを構築し,
+                    自分で投稿した求人を管理できるようにする.</li
+                >
+                <li>他の高校でもカスタマイズできるよう拡張性を高める.</li>
+            </ol>
+            <p>
                 以上の要求機能を満たすため, 次に挙げるツールを使い,
                 スキル共有ネットワークとサイトを制作した.
             </p>
-        </div>
-    </div>
-    <div class="grid">
-        <div class="item image">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
-                alt=""
-            />
-        </div>
-        <div class="item article">
             <p>
                 &nbsp;&nbsp;&nbsp;使用したツールは以下のように選定した.
                 誰でも簡単にアクセスできるようにするためには,
                 OSによる依存を無くす観点から, webアプリをベースにし,
                 システムを構築した.　また, 実装する機能が多いことや,
-                UIデザインを考慮する必要あった.　さらに,
-                スキルの投稿/管理だけの簡単な構造であったため,
+                UIデザインを考慮する必要あった.
+            </p>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="item image">
+            <img src="img/articles/03.png" alt="" />
+        </div>
+        <div class="item article">
+            <p>
+                さらに, スキルの投稿/管理だけの簡単な構造であったため,
                 プロジェクトは中規模と判断し, JavaScriptフレームワークは,
-                SvelteとSveltekitを使うことを決めた. 　Svelteとは,
+                SvelteとSveltekitを使うことを決めた. Svelteとは,
                 単一ファイルコンポーネント(SFC) のファイル構成
                 (JavaScriptとHTML, CSSを１つのファイルに書く形式) で,
                 宣言的なUIを記述できるパフォーマンスに優れたフレームワークである.　Svelteの主な特徴は,
-                １．Write less code : 少ない記述量 ２．No virtual DOM :
-                仮想DOMでない ３．Truly reactive : リアクティブステート
+            </p>
+            <ul>
+                <li>Write less code : 少ない記述量</li>
+                <li>No virtual DOM : 仮想DOMでない</li>
+                <li>Truly reactive : リアクティブステート</li>
+            </ul>
+            <p>
                 の３つである.　その他, TypeScript, HTML, CSS, SCSS, JSON
                 などの言語を用いて制作した. 　またUIコンポーネントには, SMUI
                 (Svelte Material UI) を使用し, GoogleのMaterial
                 3に準じた色と配色を用いることで,
-                統一感のあるデザインに仕上げることができた. [図１]
+                統一感のあるデザインに仕上げることができた.
             </p>
         </div>
     </div>
@@ -61,7 +67,6 @@
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
                 alt=""
             />
         </div>
@@ -82,7 +87,6 @@
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
                 alt=""
             />
         </div>
@@ -104,7 +108,6 @@
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
                 alt=""
             />
         </div>
@@ -126,7 +129,6 @@
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
                 alt=""
             />
         </div>
@@ -161,7 +163,6 @@
         <div class="item image">
             <img
                 src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
                 alt=""
             />
         </div>
@@ -173,7 +174,7 @@
                 NoSQL方式のデータベースであり,
                 一般的なSQLとは設計が異なる.　それを踏まえて必要な仕様に合わせてカラムと型を考え,
                 図４のようなDB設計となった.　ただし型に ? が付いているのは,
-                nullable (null許容) という意味である.
+                Nullable (null許容) という意味である.
             </p>
         </div>
     </div>
