@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { ZSH } from "./../../../../.svelte-kit/ambient.d.ts";
     import { Style } from "$lib/model/inline-style";
     import Accordion, { Panel, Header, Content } from "@smui-extra/accordion";
     import IconButton, { Icon } from "@smui/icon-button";
@@ -161,7 +160,7 @@
                 </Panel>
             </Accordion>
         </div>
-        <div class="arrow material-icons">sailing</div>
+        <div class="divider material-icons">sailing</div>
         <div class="chara c1">
             <Accordion>
                 <Panel bind:open={charaOpened[1]}>
@@ -177,7 +176,7 @@
                 </Panel>
             </Accordion>
         </div>
-        <div class="arrow material-icons">sailing</div>
+        <div class="divider material-icons">sailing</div>
         <div class="chara c2">
             <Accordion>
                 <Panel bind:open={charaOpened[2]}>
@@ -193,7 +192,7 @@
                 </Panel>
             </Accordion>
         </div>
-        <div class="arrow material-icons">sailing</div>
+        <div class="divider material-icons">sailing</div>
         <div class="chara c3">
             <Accordion>
                 <Panel bind:open={charaOpened[3]}>
@@ -312,8 +311,10 @@
         display: flex;
         overflow-x: auto;
         padding: 20px 0;
+        transform: scale(1, -1);
 
         .card {
+            transform: scale(1, -1);
             padding: 20px;
             min-width: 250px;
             max-width: 250px;
@@ -332,12 +333,23 @@
             padding: 10px 20px;
             font-size: 30px;
         }
+        &::-webkit-scrollbar {
+            height: 12px; /* スクロールバーの高さ */
+        }
+        &::-webkit-scrollbar-track {
+            background: var(--m3-inverse-primary); /* トラックの色 */
+            border-radius: 7px; /* トラック両端の丸み */
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--m3-primary); /* ツマミの色 */
+            border-radius: 7px; /* ツマミ両端の丸み */
+        }
     }
     .chara-container {
         display: flex;
         overflow-x: auto;
         padding: 20px 0;
-        margin: 0 -14%;
+        transform: scale(1, -1);
 
         @keyframes fuwafuwa {
             0%,
@@ -350,6 +362,7 @@
         }
 
         .chara {
+            transform: scale(1, -1);
             padding: 20px;
             min-width: 350px;
             max-width: 350px;
@@ -366,35 +379,38 @@
                 border-radius: 20px;
                 width: 300px;
             }
-
-            &.c0 {
-                img {
-                    animation: 3s fuwafuwa infinite;
-                }
-            }
-            &.c1 {
-                img {
-                    animation: 3.1s fuwafuwa infinite;
-                }
-            }
-            &.c2 {
-                img {
-                    animation: 2.9s fuwafuwa infinite;
-                }
-            }
-            &.c3 {
-                img {
-                    animation: 3.2s fuwafuwa infinite;
-                }
-            }
+        }
+        .chara:nth-child(1) img {
+            animation: 3s fuwafuwa infinite;
+        }
+        .chara:nth-child(3) img {
+            animation: 3.1s fuwafuwa infinite;
+        }
+        .chara:nth-child(5) img {
+            animation: 2.9s fuwafuwa infinite;
+        }
+        .chara:nth-child(7) img {
+            animation: 3.2s fuwafuwa infinite;
         }
 
-        .arrow {
+        .divider {
+            transform: scale(1, -1);
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 10px 20px;
             font-size: 30px;
+        }
+        &::-webkit-scrollbar {
+            height: 12px; /* スクロールバーの高さ */
+        }
+        &::-webkit-scrollbar-track {
+            background: var(--m3-inverse-primary); /* トラックの色 */
+            border-radius: 7px; /* トラック両端の丸み */
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--m3-primary); /* ツマミの色 */
+            border-radius: 7px; /* ツマミ両端の丸み */
         }
     }
 </style>
