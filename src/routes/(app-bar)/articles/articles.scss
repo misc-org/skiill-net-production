@@ -19,13 +19,18 @@
 
     .article {
         text-align: left;
-        p {
+        p,
+        li {
             font-size: large;
             line-height: 30px;
         }
     }
 
     .image {
+        p {
+            color: var(--m3-outline);
+            font-size: small;
+        }
         img {
             width: 90%;
             height: auto;
