@@ -4,6 +4,25 @@
     import IconButton, { Icon } from "@smui/icon-button";
     import _ from "lodash";
 
+    const charaData = [
+        {
+            path: "whale",
+            name: "くじら",
+        },
+        {
+            path: "turtle",
+            name: "かめ",
+        },
+        {
+            path: "orca",
+            name: "シャチ",
+        },
+        {
+            path: "manta",
+            name: "マンタ",
+        },
+    ];
+
     let charaOpened = _.fill(Array(4), false);
 </script>
 
@@ -11,7 +30,8 @@
     <div class="title"><p>| 研究方法</p></div>
     <div class="grid reverse">
         <div class="item image">
-            <img src="img/articles/02.png" alt="" />
+            <img src="img/articles/02.png" alt="要求機能と選定ツール" />
+            <p> ↑ 要求機能と選定ツール </p>
         </div>
         <div class="item article">
             <p>
@@ -46,7 +66,8 @@
     </div>
     <div class="grid">
         <div class="item image">
-            <img src="img/articles/03.png" alt="" />
+            <img src="img/articles/03.png" alt="Svelte/SvelteKit の概要" />
+            <p> ↑ Svelte/SvelteKit の概要 </p>
         </div>
         <div class="item article">
             <p>
@@ -74,7 +95,8 @@
 
     <div class="grid reverse">
         <div class="item image">
-            <img src="img/articles/04.png" alt="" />
+            <img src="img/articles/04.png" alt="配色とデザイン" />
+            <p> ↑ 配色とデザイン </p>
         </div>
 
         <div class="item article">
@@ -96,12 +118,12 @@
 
     <div class="card-container">
         <div class="card">
-            <img src="img/articles/logo/1.png" alt="" />
+            <img src="img/articles/logo/1.png" alt="logo-1" />
             <p>オリジナル</p>
         </div>
         <div class="arrow material-icons">arrow_forward</div>
         <div class="card">
-            <img src="img/articles/logo/2.png" alt="" />
+            <img src="img/articles/logo/2.png" alt="logo-2" />
             <p>
                 角を丸くすることで柔らかさを出し, IT企業に多い水色することで,
                 爽やかさがでた.
@@ -109,14 +131,14 @@
         </div>
         <div class="arrow material-icons">arrow_forward</div>
         <div class="card">
-            <img src="img/articles/logo/3.png" alt="" />
+            <img src="img/articles/logo/3.png" alt="logo-3" />
             <p>
                 スキールネットが人と人とをつなぐネットワークであるという意味をこめて時計の代わりにネットワークのロゴを貼り付けた.
             </p>
         </div>
         <div class="arrow material-icons">arrow_forward</div>
         <div class="card">
-            <img src="img/articles/logo/4.png" alt="" />
+            <img src="img/articles/logo/4.png" alt="logo-4" />
             <p>
                 ネットワークのロゴが複雑すぎるのでスキールネットが人と人とを繋ぐ電波の役割をするという意味で電波の形にしシンプルにまとめた.
             </p>
@@ -147,74 +169,49 @@
         </div>
     </div>
     <div class="chara-container">
-        <div class="chara c0">
-            <Accordion>
-                <Panel bind:open={charaOpened[0]}>
-                    <Header>
-                        <img src="img/articles/chara/whale.png" alt="" /><br />
-                        <div class="chara-title">くじら</div>
-                        <IconButton slot="icon" toggle pressed={charaOpened[0]}>
-                            <Icon class="material-icons" on>expand_less</Icon>
-                            <Icon class="material-icons">expand_more</Icon>
-                        </IconButton>
-                    </Header>
-                    <Content>The content for panel 0.</Content>
-                </Panel>
-            </Accordion>
-        </div>
-        <div class="divider material-icons">sailing</div>
-        <div class="chara c1">
-            <Accordion>
-                <Panel bind:open={charaOpened[1]}>
-                    <Header>
-                        <img src="img/articles/chara/turtle.png" alt="" /><br />
-                        <div class="chara-title">かめ</div>
-                        <IconButton slot="icon" toggle pressed={charaOpened[1]}>
-                            <Icon class="material-icons" on>expand_less</Icon>
-                            <Icon class="material-icons">expand_more</Icon>
-                        </IconButton>
-                    </Header>
-                    <Content>The content for panel 1.</Content>
-                </Panel>
-            </Accordion>
-        </div>
-        <div class="divider material-icons">sailing</div>
-        <div class="chara c2">
-            <Accordion>
-                <Panel bind:open={charaOpened[2]}>
-                    <Header>
-                        <img src="img/articles/chara/orca.png" alt="" /><br />
-                        <div class="chara-title">シャチ</div>
-                        <IconButton slot="icon" toggle pressed={charaOpened[2]}>
-                            <Icon class="material-icons" on>expand_less</Icon>
-                            <Icon class="material-icons">expand_more</Icon>
-                        </IconButton>
-                    </Header>
-                    <Content>The content for panel 2.</Content>
-                </Panel>
-            </Accordion>
-        </div>
-        <div class="divider material-icons">sailing</div>
-        <div class="chara c3">
-            <Accordion>
-                <Panel bind:open={charaOpened[3]}>
-                    <Header>
-                        <img src="img/articles/chara/manta.png" alt="" /><br />
-                        <div class="chara-title">マンタ</div>
-                        <IconButton slot="icon" toggle pressed={charaOpened[3]}>
-                            <Icon class="material-icons" on>expand_less</Icon>
-                            <Icon class="material-icons">expand_more</Icon>
-                        </IconButton>
-                    </Header>
-                    <Content>The content for panel 3.</Content>
-                </Panel>
-            </Accordion>
-        </div>
+        {#each charaData as chara, i}
+            <div class="chara c{i}">
+                <Accordion>
+                    <Panel bind:open={charaOpened[i]}>
+                        <Header>
+                            <div class="chara-img">
+                                <img
+                                    src="img/articles/chara/{chara.path}.png"
+                                    alt={chara.name}
+                                /><br />
+                            </div>
+                            <div class="chara-title">{chara.name}</div>
+                            <IconButton
+                                slot="icon"
+                                toggle
+                                pressed={charaOpened[i]}
+                                alt="expand"
+                            >
+                                <Icon class="material-icons" on
+                                    >expand_less</Icon
+                                >
+                                <Icon class="material-icons">expand_more</Icon>
+                            </IconButton>
+                        </Header>
+                        <Content>
+                            <div class="chara-description">
+                                <img
+                                    src="img/articles/chara/description/{chara.path}.png"
+                                    alt={chara.name}
+                                />
+                            </div>
+                        </Content>
+                    </Panel>
+                </Accordion>
+            </div>
+            <div class="divider material-icons">sailing</div>
+        {/each}
     </div>
 
     <div class="grid reverse">
         <div class="item image">
-            <img src="img/articles/05.png" alt="" />
+            <img src="img/articles/05.png" alt="Google Firebase の概要" />
+            <p> ↑ Google Firebase の概要 </p>
         </div>
         <div class="item article">
             <p>
@@ -232,8 +229,8 @@
     </div>
     <div class="grid ">
         <div class="item image">
-            <img src="img/articles/06.png" alt="" />
-            <p> ↑ ”スキールネット” の データベース </p>
+            <img src="img/articles/06.png" alt="CI/CLの説明図" />
+            <p> ↑ CI/CDの説明図 </p>
         </div>
         <div class="item article">
             <p>
@@ -262,7 +259,10 @@
     </div>
     <div class="grid reverse">
         <div class="item image">
-            <img src="img/articles/07.png" alt="" />
+            <img
+                src="img/articles/07.png"
+                alt="”スキールネット” の データベース"
+            />
             <p> ↑ ”スキールネット” の データベース </p>
         </div>
         <div class="item article">
@@ -350,22 +350,33 @@
                 font-weight: 800;
                 color: var(--m3-primary);
             }
-            img {
-                min-height: 300px;
-                border-radius: 20px;
-                width: 300px;
+
+            .chara-img {
+                img {
+                    min-height: 300px;
+                    border-radius: 20px;
+                    width: 300px;
+                }
+            }
+
+            .chara-description {
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
             }
         }
-        .chara:nth-child(1) img {
+        .chara-img:nth-child(1) img {
             animation: 3s fuwafuwa infinite;
         }
-        .chara:nth-child(3) img {
+        .chara-img:nth-child(3) img {
             animation: 3.1s fuwafuwa infinite;
         }
-        .chara:nth-child(5) img {
+        .chara-img:nth-child(5) img {
             animation: 2.9s fuwafuwa infinite;
         }
-        .chara:nth-child(7) img {
+        .chara-img:nth-child(7) img {
             animation: 3.2s fuwafuwa infinite;
         }
 
