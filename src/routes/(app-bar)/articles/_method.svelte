@@ -60,7 +60,7 @@
                 誰でも簡単にアクセスできるようにするためには,
                 OSによる依存を無くす観点から, webアプリをベースにし,
                 システムを構築した．また, 実装する機能が多いことや,
-                UIデザインを考慮する必要あった.
+                UIデザインを考慮する必要があった.
             </p>
         </div>
     </div>
@@ -164,6 +164,7 @@
                 一目で伝わる生物をテーマにキャラクターを考案することにした．インパクトという点においては,
                 色の塗り方で表現した． ステンドグラスのような色の塗り方にすることによりサイト自体の邪魔をすることなくインパクトを与えられると考えた．
                 また, 色の変更が簡単に行えるため配色の関係などで修正を入れる場合も素早く対応ができる点からこの色の塗り方を選択した．
+                <br />
                 &nbsp;&nbsp;&nbsp;これらの点を考慮し, 作成を進めるため簡易的なキャラクターデザインシートを使用してから作業を開始した．
             </p>
         </div>
@@ -367,16 +368,17 @@
                 }
             }
         }
-        .chara-img:nth-child(1) img {
+
+        .c0 .chara-img img {
             animation: 3s fuwafuwa infinite;
         }
-        .chara-img:nth-child(3) img {
+        .c1 .chara-img img {
             animation: 3.1s fuwafuwa infinite;
         }
-        .chara-img:nth-child(5) img {
+        .c2 .chara-img img {
             animation: 2.9s fuwafuwa infinite;
         }
-        .chara-img:nth-child(7) img {
+        .c3 .chara-img img {
             animation: 3.2s fuwafuwa infinite;
         }
 
