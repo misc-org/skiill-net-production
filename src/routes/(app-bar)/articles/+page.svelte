@@ -8,9 +8,12 @@
     import Result from "./_result.svelte";
     import Consideration from "./_consideration.svelte";
     import Conclusion from "./_conclusion.svelte";
+    import { wait } from "$lib/model/constants";
 
     export let showOnPx = 150;
     let hidden = true;
+
+    const params = location.hash;
 
     function scrollContainer() {
         return document.documentElement || document.body;
@@ -22,7 +25,12 @@
         hidden = !(scrollContainer().scrollTop > showOnPx);
     }
 
-    onMount(() => {
+    onMount(async () => {
+        if (params !== "") {
+            animateScroll.scrollToTop();
+            await wait(250);
+            animateScroll.scrollTo({ element: params, offset: -80 });
+        }
         isLoading.set(false);
     });
 </script>
@@ -33,11 +41,21 @@
     <h3>校内でのスキル共有ネットワークの制作</h3>
 </div>
 <div class="main">
-    <Introduction />
-    <Method />
-    <Result />
-    <Consideration />
-    <Conclusion />
+    <div id="introduction">
+        <Introduction />
+    </div>
+    <div id="method">
+        <Method />
+    </div>
+    <div id="result">
+        <Result />
+    </div>
+    <div id="consideration">
+        <Consideration />
+    </div>
+    <div id="conclusion">
+        <Conclusion />
+    </div>
     <div class="back-to-top fab-container" class:hidden>
         <Fab color="primary" on:click={animateScroll.scrollToTop}>
             <Icon class="material-icons">arrow_upward</Icon>

@@ -12,7 +12,11 @@
         Separator,
     } from "@smui/list";
     import { PathId, runTransition } from "$lib/model/constants";
+    import _ from "lodash";
+    import Accordion, { Panel, Header, Content } from "@smui-extra/accordion";
+    import IconButton from "@smui/icon-button";
 
+    const charaName = _.sample(["manta", "orca", "turtle", "whale"]);
     onMount(() => {
         isLoading.set(false);
     });
@@ -29,11 +33,7 @@
             </div>
         </div>
         <div class="img-container">
-            <img
-                src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                height="200"
-                alt=""
-            />
+            <img src="img/articles/chara/{charaName}.png" height="200" alt="" />
         </div>
     </div>
 </div>
@@ -45,19 +45,14 @@
                 <p>
                     &nbsp;&nbsp;&nbsp;“総合的な探究の時間” の実施がされている
                     今,異なる個性を持つ者同士でスキルを発揮するため,
-                    自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
+                    自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った．
                     校内での求人の投稿と管理を行うために,
-                    SvelteフレームワークとFirebaseを使って, webアプリを制作した.
-                    DXの向上やDB構造の工夫により実装を完了できたが,
+                    SvelteフレームワークとFirebaseを使って,
+                    webアプリを制作した．
+                    <br />
+                    &nbsp;&nbsp;&nbsp;その結果, DXの向上やDB構造の工夫により実装を完了できたが,
                     アカウント登録とセキュリティについて課題が残った.
                 </p>
-            </div>
-            <div class="item image">
-                <img
-                    src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                    height="200"
-                    alt=""
-                />
             </div>
         </div>
     </div>
@@ -67,90 +62,96 @@
         </div>
         <div class="navigator">
             <Button
-                on:click={() => runTransition(PathId.ARTICLES)}
+                on:click={() => runTransition(PathId.ARTICLES_TOP)}
                 variant="raised"
             >
                 <Label>はじめから読む</Label>
                 <Icon class="material-icons">arrow_forward</Icon>
             </Button>
         </div>
-        <div class="grid">
-            <div class="item jump-list">
-                <List>
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">rocket_launch</Graphic>
-                        <Text>導入</Text>
-                        <Meta class="material-icons">info</Meta>
-                    </Item>
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">send</Graphic>
-                        <Text>研究方法</Text>
-                    </Item>
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">archive</Graphic>
-                        <Text>結果・結論</Text>
-                    </Item>
-                    <Separator />
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">clear</Graphic>
-                        <Text>Delete</Text>
-                    </Item>
-                </List>
-            </div>
-            <div class="item jump-list">
-                <List>
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">rocket_launch</Graphic>
-                        <Text>導入</Text>
-                        <Meta class="material-icons">arrow_forward</Meta>
-                    </Item>
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">send</Graphic>
-                        <Text>Send</Text>
-                        <Meta class="material-icons">arrow_forward</Meta>
-                    </Item>
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">archive</Graphic>
-                        <Text>Archive</Text>
-                        <Meta class="material-icons">arrow_forward</Meta>
-                    </Item>
-                    <Separator />
-                    <Item on:SMUI:action={() => null}>
-                        <Graphic class="material-icons">clear</Graphic>
-                        <Text>Delete</Text>
-                        <Meta class="material-icons">arrow_forward</Meta>
-                    </Item>
-                </List>
-            </div>
+        <div class="item jump-list">
+            <List>
+                <Item
+                    on:SMUI:action={() =>
+                        runTransition(PathId.ARTICLES_INTRODUCTION)}
+                >
+                    <Graphic class="material-icons">rocket_launch</Graphic>
+                    <Text>導入</Text>
+                    <Meta class="material-icons">arrow_forward</Meta>
+                </Item>
+                <Separator />
+
+                <Item
+                    on:SMUI:action={() => runTransition(PathId.ARTICLES_METHOD)}
+                >
+                    <Graphic class="material-icons">layers</Graphic>
+                    <Text>研究方法</Text>
+                    <Meta class="material-icons">arrow_forward</Meta>
+                </Item>
+                <Separator />
+
+                <Item
+                    on:SMUI:action={() => runTransition(PathId.ARTICLES_RESULT)}
+                >
+                    <Graphic class="material-icons">archive</Graphic>
+                    <Text>結果</Text>
+                    <Meta class="material-icons">arrow_forward</Meta>
+                </Item>
+                <Separator />
+                <Item
+                    on:SMUI:action={() =>
+                        runTransition(PathId.ARTICLES_CONSIDERATION)}
+                >
+                    <Graphic class="material-icons">category</Graphic>
+                    <Text>考察</Text>
+                    <Meta class="material-icons">arrow_forward</Meta>
+                </Item>
+                <Separator />
+
+                <Item
+                    on:SMUI:action={() =>
+                        runTransition(PathId.ARTICLES_CONCLUSION)}
+                >
+                    <Graphic class="material-icons">auto_awesome</Graphic>
+                    <Text>結論</Text>
+                    <Meta class="material-icons">arrow_forward</Meta>
+                </Item>
+            </List>
         </div>
     </div>
     <div class="members">
-        <div class="title"><p>概要</p></div>
-        <div class="grid reverse">
-            <div class="item article">
-                <p>
-                    &nbsp;&nbsp;&nbsp;“総合的な探究の時間” の実施がされている今,
-                    異なる個性を持つ者同士でスキルを発揮するため,
-                    自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った.
-                    校内での求人の投稿と管理を行うために,
-                    SvelteフレームワークとFirebaseを使って, webアプリを制作した.
-                    DXの向上やDB構造の工夫により実装を完了できたが,
-                    アカウント登録とセキュリティについて課題が残った.
-                </p>
-            </div>
-            <div class="item image">
-                <img
-                    src="https://uploads-ssl.webflow.com/603c87adb15be3cb0b3ed9b5/60f95161b382b3c00f3b3057_80_cat_box_ol.png"
-                    height="200"
-                    alt=""
-                />
-            </div>
+        <div class="title"><p>| メンバー</p></div>
+        <div class="accordion">
+            <Accordion multiple>
+                <Panel open={false}>
+                    <Header>
+                        町田 渉
+                        <span slot="description">webページの作成</span>
+                    </Header>
+                    <Content />
+                </Panel>
+                <Panel open={false}>
+                    <Header>
+                        占部 颯
+                        <span slot="description">webページの配色</span>
+                    </Header>
+                    <Content />
+                </Panel>
+                <Panel open={false}>
+                    <Header>
+                        稗田 花林
+                        <span slot="description">webページの挿絵</span>
+                    </Header>
+                    <Content />
+                </Panel>
+            </Accordion>
         </div>
     </div>
 </div>
 
 <style lang="scss">
-    // common component
+    @use "../(app-bar)/articles/articles.scss";
+
     .title {
         p {
             font-weight: 800;
@@ -204,6 +205,20 @@
                 position: absolute;
                 bottom: 25px;
                 right: 25px;
+
+                @keyframes fuwafuwa {
+                    0%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                }
+
+                img {
+                    animation: 3s fuwafuwa infinite;
+                }
             }
         }
     }
@@ -270,9 +285,32 @@
                 margin-top: -10px;
             }
             .jump-list {
+                width: 50%;
+                margin: 0 auto;
                 padding-top: 20px;
                 @media screen and (max-width: 860px) {
                     padding: 0px;
+                    width: 90%;
+                }
+            }
+        }
+
+        .members {
+            text-align: left;
+            padding-bottom: 20px;
+            .accordion {
+                width: 50%;
+                pointer-events: none;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 0.3fr));
+                @media screen and (max-width: 400px) {
+                    grid-template-columns: repeat(
+                        auto-fit,
+                        minmax(300px, 0.3fr)
+                    );
                 }
             }
         }

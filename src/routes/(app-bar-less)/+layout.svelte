@@ -27,6 +27,7 @@
     import type { PageData } from "./$types";
     import Tab, { Label as TabLabel } from "@smui/tab";
     import TabBar from "@smui/tab-bar";
+    import { Style } from "$lib/model/inline-style";
 
     export let data: PageData;
 
@@ -61,15 +62,17 @@
     }
 </script>
 
-{#if hasAppMounted}
-    <AppContent class="app-content">
-        <PageTransition {data}>
-            <slot />
-        </PageTransition>
-    </AppContent>
-{:else}
-    <Splash />
-{/if}
+<div style={`cursor: ${$isLoading ? "wait" : "normal"};`}>
+    {#if hasAppMounted}
+        <AppContent class="app-content">
+            <PageTransition {data}>
+                <slot />
+            </PageTransition>
+        </AppContent>
+    {:else}
+        <Splash />
+    {/if}
+</div>
 
 <style lang="scss">
     :global(.app-content) {

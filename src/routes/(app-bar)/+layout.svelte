@@ -78,41 +78,46 @@
     }
 </script>
 
-{#if hasAppMounted}
-    <TopAppBar bind:this={topAppBar} variant="fixed">
-        <Row>
-            <Section>
-                <IconButton
-                    class="material-icons"
-                    on:click={() => ($isDrawerOpened = !$isDrawerOpened)}
-                    >menu</IconButton
-                >
-                <Title
-                    ><strong>校内でのスキル共有ネットワークの制作</strong
-                    ></Title
-                >
-            </Section>
-        </Row>
+<div style={`cursor: ${$isLoading ? "wait" : "normal"};`}>
+    {#if hasAppMounted}
+        <TopAppBar bind:this={topAppBar} variant="fixed">
+            <Row>
+                <Section>
+                    <IconButton
+                        class="material-icons"
+                        on:click={() => runTransition("/")}
+                        >arrow_back</IconButton
+                    >
+                    <Title
+                        ><strong>校内でのスキル共有ネットワークの制作</strong
+                        ></Title
+                    >
+                </Section>
+            </Row>
 
-        {#if !isLandscapeSnap}
-            <div class="progress-mobile">
-                {#if $isLoading}
-                    <LinearProgress class="progress-bar-mobile" indeterminate />
-                {/if}
-            </div>
-        {/if}
-    </TopAppBar>
+            {#if !isLandscapeSnap}
+                <div class="progress-mobile">
+                    {#if $isLoading}
+                        <LinearProgress
+                            class="progress-bar-mobile"
+                            indeterminate
+                        />
+                    {/if}
+                </div>
+            {/if}
+        </TopAppBar>
 
-    <AutoAdjust {topAppBar}>
-        <AppContent class="app-content">
-            <PageTransition {data}>
-                <slot />
-            </PageTransition>
-        </AppContent>
-    </AutoAdjust>
-{:else}
-    <Splash />
-{/if}
+        <AutoAdjust {topAppBar}>
+            <AppContent class="app-content">
+                <PageTransition {data}>
+                    <slot />
+                </PageTransition>
+            </AppContent>
+        </AutoAdjust>
+    {:else}
+        <Splash />
+    {/if}
+</div>
 
 <style lang="scss">
     :global(.app-content) {
