@@ -15,15 +15,35 @@
     import _ from "lodash";
     import Accordion, { Panel, Header, Content } from "@smui-extra/accordion";
     import IconButton from "@smui/icon-button";
+    import sitemap from "./_sitemap.svelte";
+    import Sitemap from "./_sitemap.svelte";
+    import { Style } from "$lib/model/inline-style";
 
     const charaName = _.sample(["manta", "orca", "turtle", "whale"]);
+
+    let isShowSitemap = false;
+
     onMount(() => {
         isLoading.set(false);
     });
 </script>
 
+<Sitemap {isShowSitemap} />
+
 <div class="top-view">
     <div class="top-content">
+        <div class="sitemap">
+            <Button
+                on:click={() => {
+                    isShowSitemap = false;
+                    isShowSitemap = true;
+                }}
+                variant="text"
+            >
+                <Icon class="material-icons-outlined">account_tree</Icon>
+                <Label><strong>サイトマップ</strong></Label>
+            </Button>
+        </div>
         <div class="text-container">
             <div class="center-title">
                 <p> 校内でのスキル共有ネットワークの制作 </p>
@@ -121,30 +141,49 @@
     </div>
     <div class="members">
         <div class="title"><p>| メンバー</p></div>
-        <div class="accordion">
-            <Accordion multiple>
-                <Panel open={false}>
-                    <Header>
-                        町田 渉
-                        <span slot="description">webページの作成</span>
-                    </Header>
-                    <Content />
-                </Panel>
-                <Panel open={false}>
-                    <Header>
-                        占部 颯
-                        <span slot="description">webページの配色</span>
-                    </Header>
-                    <Content />
-                </Panel>
-                <Panel open={false}>
-                    <Header>
-                        稗田 花林
-                        <span slot="description">webページの挿絵</span>
-                    </Header>
-                    <Content />
-                </Panel>
-            </Accordion>
+        <div class="list">
+            <List class="member-list" twoLine avatarList singleSelection>
+                <Item>
+                    <Graphic
+                        style="
+                        background-image: url(https://avatars.githubusercontent.com/u/86721991?v=4);
+                        background-size: contain;
+                        "
+                    />
+                    <Text>
+                        <PrimaryText>町田 渉</PrimaryText>
+                        <SecondaryText
+                            >webアプリの開発, レポートサイトの制作</SecondaryText
+                        >
+                    </Text>
+                </Item>
+                <Item>
+                    <Graphic
+                        style="
+                    background-image: url(https://avatars.githubusercontent.com/u/108719784?v=4);
+                    background-size: contain;
+                    "
+                    />
+                    <Text>
+                        <PrimaryText>占部 颯</PrimaryText>
+                        <SecondaryText>webアプリの配色デザイン</SecondaryText>
+                    </Text>
+                </Item>
+                <Item>
+                    <Graphic
+                        style="
+                    background-image: url(https://avatars.githubusercontent.com/u/108717711?v=4);
+                    background-size: contain;
+                    "
+                    />
+                    <Text>
+                        <PrimaryText>稗田 花林</PrimaryText>
+                        <SecondaryText
+                            >webアプリ, レポートサイトでの挿絵</SecondaryText
+                        >
+                    </Text>
+                </Item>
+            </List>
         </div>
     </div>
 </div>
@@ -181,6 +220,17 @@
 
         .top-content {
             width: 100%;
+
+            .sitemap {
+                position: absolute;
+                top: 3%;
+                right: 3%;
+
+                @media screen and (max-width: 860px) {
+                    top: 2%;
+                    right: 3%;
+                }
+            }
 
             .text-container {
                 text-align: center;
@@ -285,6 +335,7 @@
                 padding-left: 10px;
                 margin-top: -10px;
             }
+
             .jump-list {
                 width: 50%;
                 margin: 0 auto;
@@ -299,11 +350,17 @@
         .members {
             text-align: left;
             padding-bottom: 20px;
-            .accordion {
+            .title {
+                padding-bottom: 30px;
+            }
+            .list {
                 width: 70%;
                 pointer-events: none;
                 margin: 0 auto;
                 padding: 20px;
+                background-color: var(--m3-tertiary-container);
+                border: 0.2px solid var(--m3-on-surface-variant);
+                border-radius: 10px;
 
                 @media screen and (max-width: 860px) {
                     width: 90%;
