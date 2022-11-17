@@ -21,13 +21,9 @@
             />
         </div> -->
     </div>
-    <div class="space" />
+    <div class="space" style="height: 50px;" />
 </div>
 
 <style lang="scss">
     @use "./articles.scss";
-
-    .space {
-        height: 50px;
-    }
 </style>
