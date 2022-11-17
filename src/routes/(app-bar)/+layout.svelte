@@ -95,16 +95,11 @@
                 </Section>
             </Row>
 
-            {#if !isLandscapeSnap}
-                <div class="progress-mobile">
-                    {#if $isLoading}
-                        <LinearProgress
-                            class="progress-bar-mobile"
-                            indeterminate
-                        />
-                    {/if}
-                </div>
-            {/if}
+            <div class="progress-mobile">
+                {#if $isLoading}
+                    <LinearProgress class="progress-bar-mobile" indeterminate />
+                {/if}
+            </div>
         </TopAppBar>
 
         <AutoAdjust {topAppBar}>

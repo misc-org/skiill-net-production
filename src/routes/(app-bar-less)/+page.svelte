@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="img-container">
-            <img src="img/articles/chara/{charaName}.png" height="200" alt="" />
+            <img src="img/articles/chara/{charaName}.png" alt="" />
         </div>
     </div>
 </div>
@@ -76,7 +76,7 @@
                         runTransition(PathId.ARTICLES_INTRODUCTION)}
                 >
                     <Graphic class="material-icons">rocket_launch</Graphic>
-                    <Text>導入</Text>
+                    <Text>序論</Text>
                     <Meta class="material-icons">arrow_forward</Meta>
                 </Item>
                 <Separator />
@@ -217,6 +217,7 @@
                 }
 
                 img {
+                    height: 150px;
                     animation: 3s fuwafuwa infinite;
                 }
             }
@@ -299,10 +300,14 @@
             text-align: left;
             padding-bottom: 20px;
             .accordion {
-                width: 50%;
+                width: 70%;
                 pointer-events: none;
                 margin: 0 auto;
                 padding: 20px;
+
+                @media screen and (max-width: 860px) {
+                    width: 90%;
+                }
             }
             .grid {
                 grid-template-columns: repeat(auto-fit, minmax(400px, 0.3fr));

@@ -66,6 +66,11 @@
     {#if hasAppMounted}
         <AppContent class="app-content">
             <PageTransition {data}>
+                {#if $isLoading}
+                    <div class="progress-bar">
+                        <LinearProgress indeterminate />
+                    </div>
+                {/if}
                 <slot />
             </PageTransition>
         </AppContent>
@@ -102,5 +107,12 @@
     }
     .tab-container {
         width: 100%;
+    }
+
+    .progress-bar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 999;
     }
 </style>

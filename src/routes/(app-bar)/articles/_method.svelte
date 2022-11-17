@@ -217,7 +217,7 @@
         <div class="item article">
             <p>
                 &nbsp;&nbsp;&nbsp;また, 求人データの投稿と管理,
-                アカウンとシステムの実装は, BaaSであるGoogleのFirebaseを用い,
+                アカウントシステムの実装は, BaaSであるGoogleのFirebaseを用い,
                 SDKをwebアプリへバンドルした．求人データ投稿にはFirebase
                 FireStoreを, アカウントシステムには, OAuthに準拠したFirebase
                 Authenticationを使用し,
