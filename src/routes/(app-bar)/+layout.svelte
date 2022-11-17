@@ -49,8 +49,6 @@
         },
     ];
 
-    let active = tabs[0];
-
     onMount(async () => {
         $isDrawerOpened = LandScapeDetecter.isLandscape();
         currentPath.set(new URL(location.href).pathname);
