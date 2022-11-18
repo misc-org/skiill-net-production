@@ -51,15 +51,6 @@
         let path = new URL(location.href).pathname;
         if (path === "/") return;
     }
-
-    async function runTransition(route: string) {
-        $isDrawerOpened = isLandscapeSnap;
-        if (route !== $currentPath && !$isLoading) {
-            isLoading.set(true);
-            currentPath.set(route);
-            void goto(route);
-        }
-    }
 </script>
 
 <div style={`cursor: ${$isLoading ? "wait" : "normal"};`}>

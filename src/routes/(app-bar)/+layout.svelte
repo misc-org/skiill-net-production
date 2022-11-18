@@ -23,7 +23,7 @@
     import LinearProgress from "@smui/linear-progress";
     import Splash from "$lib/components/splash.svelte";
     import { LandScapeDetecter } from "$lib/model/landscape";
-    import { PathId } from "$lib/model/constants";
+    import { PathId, runTransition } from "$lib/model/constants";
     import Tab, { Label as TabLabel } from "@smui/tab";
     import TabBar from "@smui/tab-bar";
     import type { PageData } from ".svelte-kit/types/src/routes/(app-bar-less)/$types";
@@ -66,14 +66,6 @@
         if (path === "/") return;
     }
 
-    async function runTransition(route: string) {
-        $isDrawerOpened = isLandscapeSnap;
-        if (route !== $currentPath && !$isLoading) {
-            isLoading.set(true);
-            currentPath.set(route);
-            void goto(route);
-        }
-    }
 </script>
 
 <div style={`cursor: ${$isLoading ? "wait" : "normal"};`}>
@@ -83,7 +75,7 @@
                 <Section>
                     <IconButton
                         class="material-icons"
-                        on:click={() => runTransition("/")}
+                        on:click={() => runTransition(PathId.HOME)}
                         >arrow_back</IconButton
                     >
                     <Title

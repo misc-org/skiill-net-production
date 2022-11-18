@@ -1,5 +1,6 @@
 import { goto } from "$app/navigation";
 import { isLoading } from "./store";
+import { base } from "$app/paths";
 
 type valueOf<T> = T[keyof T];
 type PickType<T, K extends keyof T> = T[K];
@@ -20,7 +21,7 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const runTransition = (path: PathId) => {
     isLoading.set(true);
-    void goto(path);
+    void goto(base + path);
 };
 
 export type { valueOf, PickType };

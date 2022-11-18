@@ -1,6 +1,6 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
-    import { PathId } from "$lib/model/constants";
+    import { PathId, runTransition } from "$lib/model/constants";
     import { isLoading } from "$lib/model/store";
     import Button, { Label } from "@smui/button";
     import Dialog, { Actions, Content, Title } from "@smui/dialog";
@@ -14,10 +14,9 @@
         Separator,
     } from "@smui/list";
 
-    const runTransition = (path: PathId) => {
+    const runTransitionWithClosing = (path: PathId) => {
         isShowSitemap = false;
-        isLoading.set(true);
-        void goto(path);
+        runTransition(path);
     };
 
     export let isShowSitemap = false;
@@ -38,7 +37,7 @@
                         <Separator />
                         <Item
                             on:SMUI:action={() =>
-                                runTransition(PathId.ARTICLES_TOP)}
+                                runTransitionWithClosing(PathId.ARTICLES_TOP)}
                         >
                             <Graphic class="material-icons">description</Graphic
                             >
@@ -50,7 +49,7 @@
                             <List class="sub-list">
                                 <Item
                                     on:SMUI:action={() =>
-                                        runTransition(
+                                        runTransitionWithClosing(
                                             PathId.ARTICLES_INTRODUCTION,
                                         )}
                                 >
@@ -66,7 +65,7 @@
 
                                 <Item
                                     on:SMUI:action={() =>
-                                        runTransition(PathId.ARTICLES_METHOD)}
+                                        runTransitionWithClosing(PathId.ARTICLES_METHOD)}
                                 >
                                     <Graphic class="material-icons"
                                         >layers</Graphic
@@ -80,7 +79,7 @@
 
                                 <Item
                                     on:SMUI:action={() =>
-                                        runTransition(PathId.ARTICLES_RESULT)}
+                                        runTransitionWithClosing(PathId.ARTICLES_RESULT)}
                                 >
                                     <Graphic class="material-icons"
                                         >archive</Graphic
@@ -93,7 +92,7 @@
                                 <Separator />
                                 <Item
                                     on:SMUI:action={() =>
-                                        runTransition(
+                                        runTransitionWithClosing(
                                             PathId.ARTICLES_CONSIDERATION,
                                         )}
                                 >
@@ -109,7 +108,7 @@
 
                                 <Item
                                     on:SMUI:action={() =>
-                                        runTransition(
+                                        runTransitionWithClosing(
                                             PathId.ARTICLES_CONCLUSION,
                                         )}
                                 >

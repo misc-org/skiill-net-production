@@ -8,13 +8,13 @@ export default {
         adapter: adapter({
             pages: "build",
             assets: "build",
-            fallback: "index.html",
+            fallback: null,
             precompress: true,
             strict: true,
         }),
 
         // paths: {
-        //   base: "/aibo",
+        //     base: "/tqj25/250026T",
         // },
     },
 };

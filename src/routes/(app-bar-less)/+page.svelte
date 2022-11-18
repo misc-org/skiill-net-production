@@ -15,9 +15,9 @@
     import _ from "lodash";
     import Accordion, { Panel, Header, Content } from "@smui-extra/accordion";
     import IconButton from "@smui/icon-button";
-    import sitemap from "./_sitemap.svelte";
     import Sitemap from "./_sitemap.svelte";
     import { Style } from "$lib/model/inline-style";
+    import { base } from "$app/paths";
 
     const charaName = _.sample(["manta", "orca", "turtle", "whale"]);
 
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="img-container">
-            <img src="img/articles/chara/{charaName}.png" alt="" />
+            <img src={`${base}/img/articles/chara/${charaName}.png`} alt={charaName} />
         </div>
     </div>
 </div>
