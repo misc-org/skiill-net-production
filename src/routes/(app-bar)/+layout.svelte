@@ -65,10 +65,9 @@
         let path = new URL(location.href).pathname;
         if (path === "/") return;
     }
-
 </script>
 
-<div style={`cursor: ${$isLoading ? "wait" : "normal"};`}>
+<div style={`cursor: ${$isLoading ? "progress" : "normal"};`}>
     {#if hasAppMounted}
         <TopAppBar bind:this={topAppBar} variant="fixed">
             <Row>

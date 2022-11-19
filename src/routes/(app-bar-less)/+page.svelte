@@ -53,7 +53,10 @@
             </div>
         </div>
         <div class="img-container">
-            <img src={`${base}/img/articles/chara/${charaName}.png`} alt={charaName} />
+            <img
+                src={`${base}/img/articles/chara/${charaName}.png`}
+                alt={charaName}
+            />
         </div>
     </div>
 </div>
@@ -63,8 +66,8 @@
         <div class="grid reverse">
             <div class="item article">
                 <p>
-                    &nbsp;&nbsp;&nbsp;“総合的な探究の時間” の実施がされている
-                    今,異なる個性を持つ者同士でスキルを発揮するため,
+                    &nbsp;&nbsp;&nbsp;“総合的な探究の時間” の実施がされている今,
+                    異なる個性を持つ者同士でスキルを発揮するため,
                     自分にはないスキルを持った仲間を探すことのできるサイトの制作を行った．
                     校内での求人の投稿と管理を行うために,
                     SvelteフレームワークとFirebaseを使って,

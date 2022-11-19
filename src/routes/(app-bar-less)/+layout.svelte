@@ -53,7 +53,7 @@
     }
 </script>
 
-<div style={`cursor: ${$isLoading ? "wait" : "normal"};`}>
+<div style={`cursor: ${$isLoading ? "progress" : "normal"};`}>
     {#if hasAppMounted}
         <AppContent class="app-content">
             <PageTransition {data}>
